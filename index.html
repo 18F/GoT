@@ -7,7 +7,6 @@
   <script type="text/javascript" src="assets/js/inventory.js"></script>
   <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>18F Game of Thrones</title>
 </head>
 
@@ -20,13 +19,38 @@
 </div> -->
 
 <body>
+  <div id="start_turn_prompt">
+    <h4><span id="current_player_name">Player 1</span>, it's your turn to propose a trade.</h4>
+    <button id="next">Ok</button>
+  </div>
 
-  <div id="player_prompt">
+  <div id="accept_trade_prompt">
+    <h4><span id="current_player_name">Player x</span>, you have been proposed a trade!</h4>
+    <button id="next">Review Trade</button>
+  </div>
+
+  <div id="review_trade">
+    <h4>Trade details</h4>
+    <p><span id="trade_from">Player X</span> has offered to trade you <span id="giving_items" class="trade_detail">1 sword</span> for <span id="receiving_items" class="trade_detail">2 Dragons</span>.</p>
+    <button id="accept_trade">Accept Trade</button>
+    <button id="accept_trade">Reject Trade</button>
+
+    <div id="trade_reviewer_inventory">
+    <h5>Your Current Inventory:</h5>
+    <ul>
+      <li>Swords: <span id="sword_count">1</span></li>
+      <li>Dragon: <span id="dragon_count"></span></li>
+      <li>Ship: <span id="ship_count"></span></li>
+    </ul>
+    </div>
+  </div>
+
+  <div id="propose_a_trade">
     <div class="propose_a_trade">
-      <h3>Player 1</h3>
-      <h1>Propose a Trade</h1>
+      <h3><span id="current_player_name">Player 1</span>: Propose a Trade</h3>
+      <div class="trade">
       <form id="trade-form">
-      <label> What to trade:
+        <label> What to trade:
         <select name="give" id="give" form="carform">
           <option value=""></option>
         </select>
@@ -46,7 +70,17 @@
 
       <button id="propose_trade_button" type="submit">Propose trade</button>
       </form>
+      </div>
     </div>
+  </div>
+
+  <div id="current_player_inventory">
+    <h5>Your Current Inventory:</h5>
+    <ul>
+      <li>Swords: <span id="sword_count">1</span></li>
+      <li>Dragon: <span id="dragon_count"></span></li>
+      <li>Ship: <span id="ship_count"></span></li>
+    </ul>
   </div>
 
 
