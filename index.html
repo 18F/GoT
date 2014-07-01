@@ -10,14 +10,6 @@
   <title>18F Game of Thrones</title>
 </head>
 
-<!-- <div id="player_prompt">
-  <div class="propose_a_trade">
-    <h3>Player 1</h3>
-    <h1>Propose a Trade</h1>
-    <button type="submit">OK</button>
-  </div>
-</div> -->
-
 <body>
   <div id="start_turn_prompt">
     <h4><span id="current_player_name">Player 1</span>, it's your turn to propose a trade.</h4>
@@ -99,6 +91,7 @@
         $("#want").append('<option id="' + p + '" >' + p + '</option>');
     }
 
+<<<<<<< HEAD
    $("#trade-form").submit( function (e) {
         var player1 = tywin ;//current_player; //global var
         console.log('ttt');
@@ -122,5 +115,26 @@
         e.preventDefault();
         return false;
    });
+=======
+
+    var tr = create_trade(shay, danny, 'dragons', 'ship');
+    console.log(tr);
+   ;
+    console.log('Does shay have what she is offering?');
+    console.log(check_offer(shay, 'dragons'));
+
+    console.log('Does danny have what she is offering?');
+    console.log(check_offer(danny, 'ship'));
+    
+    update_inventory(tr);
+
+    console.log('shays new inventory');
+    console.log(shay);
+    console.log('dannys new inventory');
+    console.log(danny);
+    var player_2 = get_player_by_id(2);
+    console.log('player id:2 = ' + player_2.name);
+    console.log('player 2 inventory:' + player_2.inventory.toString());
+>>>>>>> 270fa4fcd023cdfd3dcb654b1d1895989f9bf09f
   </script>
 </body>
