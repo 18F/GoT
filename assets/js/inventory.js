@@ -33,7 +33,7 @@ var tywin = {
             }
  
 
-trades = [];
+var trades = [];
 
 players = [tywin, shay, eddard, danny]
 
