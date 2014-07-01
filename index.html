@@ -4,21 +4,74 @@
   <meta name="description" content="Details about the awesome wedding of Ms. Jessica Glynn to Mr. Charles Worthington, on August 23 2014 in Beverly, MA">
   <meta property="og:title" content="18F Game of Thrones">
   <link href="assets/css/application.css" media="all" rel="stylesheet" type="text/css" data-skrollr-stylesheet/>
+  <script type="text/javascript" src="assets/js/inventory.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>18F Game of Thrones</title>
 </head>
 
-<div id="player_promt">
+<!-- <div id="player_prompt">
   <div class="propose_a_trade">
-    <h1>Player 1</h1>
-    <h2>Propose a Trade</h2>
+    <h3>Player 1</h3>
+    <h1>Propose a Trade</h1>
     <button type="submit">OK</button>
   </div>
+</div> -->
 
-  <div class="respond_to_a_trade">
-    
+<body>
+
+  <div id="player_prompt">
+    <div class="propose_a_trade">
+      <h3>Player 1</h3>
+      <h1>Propose a Trade</h1>
+      <label> What to trade:
+        <select name="carlist" form="carform">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+      </label>
+
+      <label> For:
+        <select name="carlist" form="carform">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+      </label>
+
+      <label>Wth who:
+        <select name="carlist" form="carform">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+      </label>
+
+      <button id="propose_trade_button" type="submit">Propose trade</button>
+    </div>
   </div>
-</div>
 
-<h1>Game of thrones</h1>
+
+  <script type="text/javascript">
+
+    var tr = create_trade(shay, danny, 'dragons', 'ship');
+    console.log(tr);
+   
+    console.log('Does shay have what she is offering?');
+    console.log(check_offer(shay, 'dragons'));
+
+    console.log('Does danny have what she is offering?');
+    console.log(check_offer(danny, 'ship'));
+    
+    update_inventory(tr);
+
+    console.log('shays new inventory');
+    console.log(shay);
+    console.log('dannys new inventory');
+    console.log(danny);
+  </script>
+</body>
