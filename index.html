@@ -65,14 +65,16 @@
         $("#want").append('<option id="' + p + '" >' + p + '</option>');
     }
 
-   $("trade-form").submit( function () {
-        
+   $("#propose_trade_button").click( function () {
         var player1 = tywin ;//current_player; //global var
-        var player2 = get_player_by_id( $("#who").val());
-
+        console.log($("#who").val());
+        var player2 = get_player_by_id( parseInt($("#who").val()));
+        console.log(player1);
         var give = $("#give").val();
         var want = $("#want").val();
         
+        console.log(check_offer(player1, give));
+
         if (check_offer(player1, give)) {
 
             var to = create_trade(player1, player2, give, want);
@@ -82,24 +84,5 @@
             alert("You cannot complete this trade! Don't have the resources bub!");
         }   
    });
-
-
-    var tr = create_trade(shay, danny, 'dragons', 'ship');
-    console.log(tr);
-   
-    console.log('Does shay have what she is offering?');
-    console.log(check_offer(shay, 'dragons'));
-
-    console.log('Does danny have what she is offering?');
-    console.log(check_offer(danny, 'ship'));
-    
-    update_inventory(tr);
-
-    console.log('shays new inventory');
-    console.log(shay);
-    console.log('dannys new inventory');
-    console.log(danny);
-    var player_2 = get_player_by_id(2);
-    console.log('player id:2 = ' + player_2.name);
   </script>
 </body>
