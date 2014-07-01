@@ -5,6 +5,7 @@
   <meta property="og:title" content="18F Game of Thrones">
   <link href="assets/css/application.css" media="all" rel="stylesheet" type="text/css" data-skrollr-stylesheet/>
   <script type="text/javascript" src="assets/js/inventory.js"></script>
+  <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>18F Game of Thrones</title>
 </head>
@@ -39,33 +40,28 @@
     <div class="propose_a_trade">
       <h3><span id="current_player_name">Player 1</span>: Propose a Trade</h3>
       <div class="trade">
-         <label> What to trade:
-          <select name="carlist" form="carform">
-            <option value="sword">Sword</option>
-            <option value="dragon">Dragon</option>
-            <option value="ship">Ship</option>
-          </select>
-        </label>
+      <form id="trade-form">
+        <label> What to trade:
+        <select name="give" id="give" form="carform">
+          <option value=""></option>
+        </select>
+      </label>
 
-        <label>For:
-          <select name="carlist" form="carform">
-            <option value="sword">Sword</option>
-            <option value="dragon">Dragon</option>
-            <option value="ship">Ship</option>
-          </select>
-        </label>
+      <label> For:
+        <select name="want" id="want" form="carform">
+          <option value=""></option>
+        </select>
+      </label>
 
-        <label>Wth who:
-          <select name="carlist" form="carform">
-            <option value="Tywin">Tywin</option>
-            <option value="Shay">Shay</option>
-            <option value="Eddard">Eddard</option>
-            <option value="Danny">Danny</option>
-          </select>
-        </label>
+      <label>Wth who:
+        <select name="who" id="who" form="carform">
+          <option value=""></option>
+        </select>
+      </label>
+
+      <button id="propose_trade_button" type="submit">Propose trade</button>
+      </form>
       </div>
-     
-      <button id="propose_trade_button" type="submit" onclick="alert('You dont have the resources!')">Propose trade</button>
     </div>
   </div>
 
@@ -78,7 +74,19 @@
     </ul>
   </div>
 
+
   <script type="text/javascript">
+
+    //fill in users
+    console.log(players);
+    for (n in players) {
+        var p = players[n];
+        console.log(p);
+        $("#who").append('<select id="' + p.id + '" >' + p.name + '</select>');
+    }
+
+    //fill in items
+
 
     var tr = create_trade(shay, danny, 'dragons', 'ship');
     console.log(tr);
@@ -95,5 +103,7 @@
     console.log(shay);
     console.log('dannys new inventory');
     console.log(danny);
+    var player_2 = get_player_by_id(2);
+    console.log('player id:2 = ' + player_2.name);
   </script>
 </body>
