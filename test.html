@@ -9,6 +9,13 @@
 
     var tr = create_trade(shay, danny, 'dragons', 'ship');
     console.log(tr);
+   
+    console.log('Does shay have what she is offering?');
+    console.log(check_offer(shay, 'dragons'));
+
+    console.log('Does danny have what she is offering?');
+    console.log(check_offer(danny, 'ship'));
+    
     update_inventory(tr);
 
     console.log('shays new inventory');
