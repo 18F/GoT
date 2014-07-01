@@ -35,7 +35,7 @@ var tywin = {
 
 var trades = [];
 
-players = [tywin, shay, eddard, danny]
+players = [tywin, shay, eddard, danny];
 
 /* example trade object
 {
