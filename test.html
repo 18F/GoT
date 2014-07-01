@@ -1,27 +1,31 @@
 <!HTML>
 
 <head>
-<script src="assets/js/inventory.js" type="text/javascript" ></script>
+
+  <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
 </head>
 <body>
 
+<div id="inventory">
+
+ <button id="draw">Draw a Side!</button>
+
+</div>
+
 <script type="text/javascript">
 
-    var tr = create_trade(shay, danny, 'dragons', 'ship');
-    console.log(tr);
-   
-    console.log('Does shay have what she is offering?');
-    console.log(check_offer(shay, 'dragons'));
+var items = ['Top', 'Bottom', 'Left', 'Right' ];
+var user_items = [];
 
-    console.log('Does danny have what she is offering?');
-    console.log(check_offer(danny, 'ship'));
+var random = function() {
     
-    update_inventory(tr);
+    var item = items[Math.floor(Math.random()*items.length)];;
+    console.log(item);
+}
 
-    console.log('shays new inventory');
-    console.log(shay);
-    console.log('dannys new inventory');
-    console.log(danny);
+
+random();
+
 </script>
 
 </body>
