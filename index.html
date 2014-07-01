@@ -5,6 +5,7 @@
   <meta property="og:title" content="18F Game of Thrones">
   <link href="assets/css/application.css" media="all" rel="stylesheet" type="text/css" data-skrollr-stylesheet/>
   <script type="text/javascript" src="assets/js/inventory.js"></script>
+  <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>18F Game of Thrones</title>
@@ -24,39 +25,43 @@
     <div class="propose_a_trade">
       <h3>Player 1</h3>
       <h1>Propose a Trade</h1>
+      <form id="trade-form">
       <label> What to trade:
-        <select name="carlist" form="carform">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="opel">Opel</option>
-          <option value="audi">Audi</option>
+        <select name="give" id="give" form="carform">
+          <option value=""></option>
         </select>
       </label>
 
       <label> For:
-        <select name="carlist" form="carform">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="opel">Opel</option>
-          <option value="audi">Audi</option>
+        <select name="want" id="want" form="carform">
+          <option value=""></option>
         </select>
       </label>
 
       <label>Wth who:
-        <select name="carlist" form="carform">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="opel">Opel</option>
-          <option value="audi">Audi</option>
+        <select name="who" id="who" form="carform">
+          <option value=""></option>
         </select>
       </label>
 
       <button id="propose_trade_button" type="submit">Propose trade</button>
+      </form>
     </div>
   </div>
 
 
   <script type="text/javascript">
+
+    //fill in users
+    console.log(players);
+    for (n in players) {
+        var p = players[n];
+        console.log(p);
+        $("#who").append('<select id="' + p.id + '" >' + p.name + '</select>');
+    }
+
+    //fill in items
+
 
     var tr = create_trade(shay, danny, 'dragons', 'ship');
     console.log(tr);

@@ -5,7 +5,9 @@ var tywin = {
                 dragons:0,
                 ship: 0,
                 'tears of lys': 0
-              } 
+              },
+              name: 'Tywin',
+              id: 1
             }   
  var shay = { 
               inventory: {
@@ -13,7 +15,9 @@ var tywin = {
                 swords:0,
                 ship: 0,
                 'tears of lys': 0
-              }
+              },
+              name: 'Shay',
+              id: 2
             }
  var eddard = { 
               inventory: {
@@ -21,7 +25,9 @@ var tywin = {
                 ship: 0,
                 swords: 0,
                 'tears of lys': 7
-              }
+              },
+              name: 'Eddard',
+              id:3
             }
  var danny = { 
               inventory: {
@@ -29,7 +35,9 @@ var tywin = {
                 dragons: 0,
                 swords: 0,
                 'tears of lys': 0
-              }
+              },
+              name: 'Daenaryus',
+              id: 4
             }
  
 
