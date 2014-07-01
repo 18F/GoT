@@ -39,10 +39,10 @@
       </label>
 
       <label>Wth who:
+      </label>
         <select name="who" id="who" form="carform">
           <option value=""></option>
         </select>
-      </label>
 
       <button id="propose_trade_button" type="submit">Propose trade</button>
       </form>
@@ -53,14 +53,35 @@
   <script type="text/javascript">
 
     //fill in users
-    console.log(players);
     for (n in players) {
         var p = players[n];
-        console.log(p);
-        $("#who").append('<select id="' + p.id + '" >' + p.name + '</select>');
+        $("#who").append('<option id="' + p.id + '" >' + p.name + '</option>');
     }
 
     //fill in items
+    for (n in items) {
+        var p = items[n];
+        $("#give").append('<option id="' + p + '" >' + p + '</option>');
+        $("#want").append('<option id="' + p + '" >' + p + '</option>');
+    }
+
+   $("trade-form").submit( function () {
+        
+        var player1 = tywin ;//current_player; //global var
+        var player2 = get_player_by_id( $("#who").val());
+
+        var give = $("#give").val();
+        var want = $("#want").val();
+        
+        if (check_offer(player1, give)) {
+
+            var to = create_trade(player1, player2, give, want);
+            update_inventory(to);
+
+        } else {
+            alert("You cannot complete this trade! Don't have the resources bub!");
+        }   
+   });
 
 
     var tr = create_trade(shay, danny, 'dragons', 'ship');

@@ -40,7 +40,7 @@ var tywin = {
               id: 4
             }
  
-
+var items = ['sword', 'dragons', 'tears of lys', 'ship'];
 var trades = [];
 
 players = [tywin, shay, eddard, danny];
