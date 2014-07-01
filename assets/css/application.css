@@ -255,18 +255,60 @@ dl {
       color: black; }
 
 body {
-  color: white;
-  background: #663399; }
+  color: #555;
+  background: #663399;
+  *zoom: 1;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px; }
+  body:before, body:after {
+    content: " ";
+    display: table; }
+  body:after {
+    clear: both; }
 
-#player_prompt {
-  width: 100%;
-  height: 100%;
+#propose_a_trade {
+  display: none;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin-left: 25.58941%;
+  padding: 20px;
+  background: white;
   bottom: 0;
   top: 0;
   display: fixed;
-  background: blue;
   text-align: center; }
+  #propose_a_trade:last-child {
+    margin-right: 0; }
+
+#current_player_inventory, #accept_trade_prompt, #start_turn_prompt, #review_trade {
+  background: white;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin-left: 25.58941%;
+  padding: 20px;
+  margin-bottom: 20px; }
+  #current_player_inventory:last-child, #accept_trade_prompt:last-child, #start_turn_prompt:last-child, #review_trade:last-child {
+    margin-right: 0; }
+
+button {
+  margin: 10px 0; }
+
+#player_prompt {
+  background: white;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin-left: 25.58941%;
+  padding: 20px; }
+  #player_prompt:last-child {
+    margin-right: 0; }
 
 .propose_a_trade {
-  color: white;
   text-align: left; }

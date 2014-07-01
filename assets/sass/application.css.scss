@@ -3,22 +3,46 @@
 @import "bitters/bitters";
 
 body {
-  color: white;
+  color: #555;
   background: #663399; // rebecca purple. http://dev.w3.org/csswg/css-color/#valuedef-rebeccapurple
+  @include outer-container;
+  margin-top: 40px;
 }
 
-#player_prompt {
-  width: 100%;
-  height: 100%;
+#propose_a_trade {
+  display: none;
+  @include span-columns(6);
+  @include shift(3);
+  padding: 20px;
+  background: white;
+  // height: 100%;
   bottom: 0;
   top: 0;
   display: fixed;
-  background: blue;
   text-align: center;
 }
 
+#current_player_inventory, #accept_trade_prompt, #start_turn_prompt, #review_trade {
+  background: white;
+  @include span-columns(6);
+  @include shift(3);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  margin: 10px 0;
+}
+
+#player_prompt {
+  background: white;
+  @include span-columns(6);
+  @include shift(3);
+  padding: 20px;
+}
+
+
 .propose_a_trade {
-  color: white;
   text-align: left;
 }
 
