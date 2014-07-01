@@ -49,7 +49,7 @@
     <div class="propose_a_trade">
       <h3><span id="current_player_name">Player 1</span>: Propose a Trade</h3>
       <div class="trade">
-      <form id="trade-form">
+      <form id="trade-form" action="#">
         <label> What to trade:
         <select name="give" id="give" form="carform">
           <option value=""></option>
@@ -99,11 +99,12 @@
         $("#want").append('<option id="' + p + '" >' + p + '</option>');
     }
 
-   $("#propose_trade_button").click( function () {
+   $("#trade-form").submit( function (e) {
         var player1 = tywin ;//current_player; //global var
+        console.log('ttt');
         console.log($("#who").val());
         var player2 = get_player_by_id( parseInt($("#who").val()));
-        console.log(player1);
+        console.log(player2);
         var give = $("#give").val();
         var want = $("#want").val();
         
@@ -113,10 +114,13 @@
 
             var to = create_trade(player1, player2, give, want);
             update_inventory(to);
-
+            console.log('updated inventory');
         } else {
             alert("You cannot complete this trade! Don't have the resources bub!");
-        }   
+        } 
+
+        e.preventDefault();
+        return false;
    });
   </script>
 </body>
