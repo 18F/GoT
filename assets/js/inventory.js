@@ -96,3 +96,13 @@ var get_player_by_id = function(id){
   }  
 }
 
+var get_inventory_by_id = function(id){
+  for (var i = 0; i < players.length; i++) {
+      if(players[i].id == id ){
+        return players[i].inventory;
+      }
+ 
+  }  
+
+}
+
