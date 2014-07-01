@@ -8,7 +8,9 @@
 
 <div id="inventory">
 
- <button id="draw">Draw a Side!</button>
+    <button id="draw">Draw a Side!</button>
+
+    <div id="items"></div>
 
 </div>
 
@@ -21,10 +23,19 @@ var random = function() {
     
     var item = items[Math.floor(Math.random()*items.length)];;
     console.log(item);
+    return item
 }
 
+var show_items = function(){
+    $("#items").text(JSON.stringify(user_items));
+}
 
-random();
+$("#draw").click(function (e){
+    var i = random();
+    user_items.push(i);
+    console.log(i);
+    show_items();;
+});
 
 </script>
 
