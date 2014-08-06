@@ -1,0 +1,42 @@
+<!HTML>
+
+<head>
+
+  <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+
+<div id="inventory">
+
+    <button id="draw">Draw a Side!</button>
+
+    <div id="items"></div>
+
+</div>
+
+<script type="text/javascript">
+
+var items = ['Top', 'Bottom', 'Left', 'Right' ];
+var user_items = [];
+
+var random = function() {
+    
+    var item = items[Math.floor(Math.random()*items.length)];;
+    console.log(item);
+    return item
+}
+
+var show_items = function(){
+    $("#items").text(JSON.stringify(user_items));
+}
+
+$("#draw").click(function (e){
+    var i = random();
+    user_items.push(i);
+    console.log(i);
+    show_items();;
+});
+
+</script>
+
+</body>
